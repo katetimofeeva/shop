@@ -6,10 +6,15 @@ import { UserContext } from '../../context/userContext'
 
 import { signOutUser } from '../../utils/firebase/Firebase'
 
+import CardIcon from '../../components/CartIcon/CartIcon'
+import CartDropdawn from '../../components/CartDropdawn/CartDropdawn'
+
 import './Navigation.scss'
+import { CartContext } from '../../context/cartContext'
 
 const Navigation = () => {
     const { currentUser } = useContext(UserContext)
+    const { isShoppingCart } = useContext(CartContext)
 
     return (
         <>
@@ -30,11 +35,9 @@ const Navigation = () => {
                             Sign In
                         </Link>
                     )}
-
-                    {/* <Link className='nav-link' to = '/signUp'>
-                        Sign Up
-                    </Link> */}
+                    <CardIcon   />
                 </div>
+                {isShoppingCart && <CartDropdawn />}
             </div>
             <Outlet />
         </>

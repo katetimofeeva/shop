@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import { useState } from 'react'
 
 import {
     signInWithGooglePopup,
@@ -18,7 +18,6 @@ const SignInForm = () => {
     const [formValue, setFormValue] = useState(defaultFormValue)
     const { email, password } = formValue
 
-
     const logWithGoogleUser = async () => {
         await signInWithGooglePopup()
     }
@@ -26,10 +25,7 @@ const SignInForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         try {
-            await signInAuthUserWithEmailAndPassword(
-                email,
-                password
-            )
+            await signInAuthUserWithEmailAndPassword(email, password)
             cleanFormFields()
         } catch (err) {
             if (err.code === 'auth/wrong-password') {

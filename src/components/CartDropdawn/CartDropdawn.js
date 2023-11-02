@@ -1,5 +1,5 @@
-import React, { useContext, } from 'react'
-import { useNavigate } from "react-router-dom";
+import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { CartContext } from '../../context/cartContext'
 
 import Button from '../Button/Button'
@@ -9,10 +9,10 @@ import './CartDropdawn.scss'
 
 const CartDropdawn = () => {
     const { cartItem } = useContext(CartContext)
-    const navigate =useNavigate()
+    const navigate = useNavigate()
 
     const handleClick = () => {
-        navigate("/checkout");
+        navigate('/checkout')
     }
     return (
         <>
